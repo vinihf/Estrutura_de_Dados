@@ -27,5 +27,5 @@ def pesquisa_binaria(lista, item):
 
 teste = [0, 10, 20, 30, 40, 50, 60, 70]
 
-print(pesquisa_binaria_recursiva(teste,0,len(teste)-1,20))
-print(pesquisa_binaria_recursiva(teste,0,len(teste)-1,700))
+print(pesquisa_binaria(teste,20))
+print(pesquisa_binaria(teste,700))
