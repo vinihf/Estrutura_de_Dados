@@ -13,7 +13,7 @@ def mergeSort(lista):
         k = 0
         while i < len(listaDaEsquerda) and j < len(listaDaDireita):
             # Insere na nova lista ordenada o menor elemento das duas
-            if listaDaEsquerda[i] < listaDaDireita[j]:
+            if listaDaEsquerda[i] > listaDaDireita[j]:
                 lista[k]=listaDaEsquerda[i]
                 # Incrementa o índice da lista da esquerda
                 i += 1
