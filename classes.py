@@ -6,6 +6,9 @@ class Calculadora:
     def soma(self):
         return (self.valor1+self.valor2)
 
+    def soma(self):
+        return (self.valor1+self.valor2)
+
 
 c = Calculadora(1,2)
 print(c.soma())
