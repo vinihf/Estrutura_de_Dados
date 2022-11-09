@@ -15,7 +15,7 @@ class Stack:
         while cur:
             out += str(cur.value) + "->"
             cur = cur.next
-        return out[:-3]   
+        return out[:-2]   
 
     def getSize(self):
         return self.size
@@ -42,4 +42,9 @@ class Stack:
         self.head.next = self.head.next.next
         self.size -= 1
         return remove.value
+
+
+
+
+
 
