@@ -1,15 +1,12 @@
 from Classes import Stack
 
 def main():
-    stack = Stack()
-    for i in range(0, 11):
-        stack.push(i)
-    print(f"Stack: {stack}")
-
-    '''for _ in range(1, 6):
-        remove = stack.pop()
-        print(f"Pop: {remove}")
-    print(f"Stack: {stack}")
-'''
+    p1 = Stack()
+    p1.push("G")
+    p1.push("M")
+    p1.push("P")
+    p2 = Stack()
+    p3 = Stack()
+    
 if __name__ == '__main__':
     main()
