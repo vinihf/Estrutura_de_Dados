@@ -34,5 +34,3 @@ print(lista)
 ano = lista.pop(1)
 
 print(lista)
-
-

@@ -22,7 +22,11 @@ print(bst.height)
 print(bst.is_balanced)
 
 # Contém item?
-print(2022  in bst)
+print(2022 in bst)
+
+bst.insert(1990)
+
+bst.display()
 
 # Remove item
 bst.remove(1994)
