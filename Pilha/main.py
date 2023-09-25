@@ -5,8 +5,7 @@ def main():
     p1.push("G")
     p1.push("M")
     p1.push("P")
-    p2 = Stack()
-    p3 = Stack()
-    
+    print(p1)
+
 if __name__ == '__main__':
     main()
