@@ -29,8 +29,6 @@ class Queue:
         self.size+=1
 
     def dequeue(self):
-        if self.isEmpty():
-            raise Exception("Empty queue")
         data = self.first.value
         self.first = self.first.next
         if self.first is None:
