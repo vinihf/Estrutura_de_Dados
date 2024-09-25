@@ -10,12 +10,14 @@ def main():
 
     pilha2.push(1)
     pilha2.push(2)
-    pilha2.push(2)
+    pilha2.push(3)
+    pilha2.push(3)
+
 
     diferentes = False
 
     if pilha1.getSize()!=pilha2.getSize():
-        print("Pilhas não são iguais.")
+        diferentes = True
     else:
         while pilha1.getSize()>0:
             if pilha1.pop()!=pilha2.pop():
