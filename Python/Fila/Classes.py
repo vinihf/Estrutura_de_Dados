@@ -1,43 +1,64 @@
-class Node:
-    def __init__(self, value = 0, next = None):
-        self.value = value
-        self.next = next
-    
-    def __repr__(self):
-        return '%s -> %s' % (self.value, self.next)
-
-class Queue:
+class Fila:
     def __init__(self):
-        self.first = None
-        self.last = None
-        self.size = 0
+        self.fila = []
 
-    def getSize(self):
-        return self.size
+    def __str__(self):
+        text = ""
+        for item in self.fila:
+            text += str(item) + " -> "
+        return text.strip(" -> ")
 
     def isEmpty(self):
-        return self.size == 0   
+        return len(self.fila) == 0
 
-    def enqueue(self, value):
-        new = Node(value)
-        if self.first == None:
-            self.first = new
-            self.last =  new
-        else:
-            self.last.next = new
-            self.last = new
-        self.size+=1
+    def enqueue(self, item):
+        self.fila.append(item)
 
     def dequeue(self):
-        data = self.first.value
-        self.first = self.first.next
-        if self.first is None:
-            self.last = None
-        self.size-=1
-        return data
+        if not self.isEmpty():
+            return self.fila.pop(0)
+        else:
+            return None
 
-    def __repr__(self):
-        return "[" + str(self.first) + "]"
+    def peek(self):
+        if not self.isEmpty():
+            return self.fila[0]
+        else:
+            return None
 
 
+class FilaCircular:
+    def __init__(self, tamanho):
+        self.tamanho = tamanho
+        self.fila = [None] * tamanho
+        self.frente = -1
+        self.cauda = -1
 
+    def isFull(self):
+        return (self.cauda + 1) % self.tamanho == self.frente
+
+    def isEmpty(self):
+        return self.frente == -1
+
+    def enqueue(self, item):
+        if self.isFull():
+            print("Fila está cheia")
+        else:
+            if self.frente == -1:
+                self.frente = 0
+            self.cauda = (self.cauda + 1) % self.tamanho
+            self.fila[self.cauda] = item
+            print(f'Enqueue: {item} Frente: {self.frente}  Cauda: {self.cauda}')
+
+    def dequeue(self):
+        if self.isEmpty():
+            print("Fila está vazia")
+        else:
+            data = self.fila[self.frente]
+            if self.frente == self.cauda:
+                self.frente = -1
+                self.cauda = -1
+            else:
+                self.frente = (self.frente + 1) % self.tamanho
+            print(f'Dequeue: {data} Frente: {self.frente}  Cauda: {self.cauda}')
+            return data
